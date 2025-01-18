@@ -11,7 +11,7 @@ const AuthNav = () => {
           marginRight: '30px',
         }}
       >
-        Registr
+        Registration
       </Link>
       <Link className="nav-item nav-link" to="login">
         Login
