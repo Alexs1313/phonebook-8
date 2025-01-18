@@ -1,0 +1,62 @@
+import { useDispatch } from 'react-redux';
+import { loginThunk } from '../redux/auth/operationsThunk';
+import { useNavigate } from 'react-router-dom';
+
+const LoginPage = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    dispatch(
+      loginThunk({
+        email: e.target.elements.email.value,
+        password: e.target.elements.password.value,
+      })
+    );
+    navigate('/');
+  };
+
+  return (
+    <div>
+      <div
+        className=" card position-absolute top-50 start-50 translate-middle p-2"
+        style={{ minWidth: '350px' }}
+      >
+        <h1>Login</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="exampleInputName1" className="form-label">
+              Email
+            </label>
+            <input
+              name="email"
+              className="form-control"
+              id="exampleInputName1"
+              placeholder="Enter name"
+            />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="exampleInputPassword1" className="form-label">
+              Password
+            </label>
+            <input
+              name="password"
+              className="form-control"
+              id="exampleInputPassword1"
+              placeholder="Password"
+            />
+          </div>
+
+          <button type="submit" className="btn btn-primary">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default LoginPage;
