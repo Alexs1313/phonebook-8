@@ -1,10 +1,8 @@
-import { useNavigate } from 'react-router-dom';
 import { registerThunk } from '../redux/auth/operationsThunk';
 
 import { useDispatch } from 'react-redux';
 
 const RegisterPage = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -15,7 +13,6 @@ const RegisterPage = () => {
       password: e.target.elements.password.value,
     };
     dispatch(registerThunk(newUser));
-    navigate('/login');
 
     e.target.reset();
   };
