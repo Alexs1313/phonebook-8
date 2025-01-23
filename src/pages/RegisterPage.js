@@ -22,7 +22,7 @@ const RegisterPage = () => {
       className=" card position-absolute top-50 start-50 translate-middle p-2"
       style={{ minWidth: '350px' }}
     >
-      <h1>Registration</h1>
+      <h1 style={{ margin: '0 auto' }}>Sign in</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="exampleInputName1" className="form-label">
@@ -30,7 +30,7 @@ const RegisterPage = () => {
           </label>
           <input
             name="name"
-            className="form-control"
+            className="form-control form-control-sm"
             id="exampleInputName1"
             placeholder="Enter name"
           />
@@ -41,7 +41,7 @@ const RegisterPage = () => {
           </label>
           <input
             name="email"
-            className="form-control"
+            className="form-control form-control-sm"
             id="exampleInputEmail1"
             placeholder="Enter email"
           />
@@ -51,16 +51,18 @@ const RegisterPage = () => {
             Password
           </label>
           <input
+            type="password"
             name="password"
-            className="form-control"
+            className="form-control form-control-sm"
             id="exampleInputPassword1"
             placeholder="Password"
           />
         </div>
-
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <button type="submit" className="btn btn-primary">
+            Register
+          </button>
+        </div>
       </form>
     </div>
   );

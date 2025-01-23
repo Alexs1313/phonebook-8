@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutThunk } from '../../redux/auth/operationsThunk';
+import { Button } from '@mui/material';
 
 const UserMenu = () => {
   const name = useSelector(state => state.auth.user.name);
@@ -7,16 +8,17 @@ const UserMenu = () => {
 
   return (
     <div>
-      <span className="nav-item nav-link" style={{ paddingLeft: '950px' }}>
-        Hello , {name} 🐷{' '}
-        <button
-          className="btn btn-link"
-          style={{ color: 'white' }}
+      <div className="nav-item nav-link">
+        Welcome ,{name} 🐷{' '}
+        <Button
+          size="small"
+          color="black"
+          variant="contained"
           onClick={() => dispatch(logoutThunk())}
         >
-          Log out
-        </button>
-      </span>
+          Logout
+        </Button>
+      </div>
     </div>
   );
 };

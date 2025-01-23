@@ -10,7 +10,7 @@ const Layout = () => {
   return (
     <div>
       <AppBar />
-      <Box component="section" sx={{ p: 2, flexGrow: 1 }}>
+      <Box sx={{ p: 2, flexGrow: 1 }}>
         <Suspense fallback={null}>
           <Outlet />
         </Suspense>

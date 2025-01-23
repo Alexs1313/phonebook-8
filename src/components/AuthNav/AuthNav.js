@@ -2,21 +2,14 @@ import { Link } from 'react-router-dom';
 
 const AuthNav = () => {
   return (
-    <>
-      <Link
-        className="nav-item nav-link"
-        to="register"
-        style={{
-          marginLeft: '450px',
-          marginRight: '30px',
-        }}
-      >
-        Registration
+    <div style={{ display: 'flex', gap: 20 }}>
+      <Link className="nav-item nav-link" to="register">
+        Registr
       </Link>
       <Link className="nav-item nav-link" to="login">
         Login
       </Link>
-    </>
+    </div>
   );
 };
 

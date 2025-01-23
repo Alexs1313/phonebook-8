@@ -20,11 +20,13 @@ const LoginPage = () => {
       className=" card position-absolute top-50 start-50 translate-middle p-2"
       style={{ minWidth: '350px' }}
     >
+      <h1 style={{ margin: '0 auto', marginBottom: 15 }}>Login</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-floating mb-3">
           <input
+            type="email"
             name="email"
-            className="form-control"
+            className="form-control form-control-sm "
             id="floatingInput"
             placeholder="name@example.com"
           />
@@ -32,20 +34,23 @@ const LoginPage = () => {
         </div>
         <div className="form-floating ">
           <input
+            type="password"
             name="password"
-            className="form-control"
+            className="form-control form-control-sm "
             id="floatingPassword"
             placeholder="Password"
           />
           <label htmlFor="floatingPassword">Password</label>
         </div>
-        <button
-          style={{ marginTop: '10px' }}
-          type="submit"
-          className="btn btn-primary"
-        >
-          Submit
-        </button>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <button
+            style={{ marginTop: '10px' }}
+            type="submit"
+            className="btn btn-primary"
+          >
+            Login
+          </button>
+        </div>
       </form>
     </div>
   );
