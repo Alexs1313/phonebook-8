@@ -22,13 +22,6 @@ const Contact = ({ name, number, id }) => {
         <ListItemText>
           {name} : {number}
         </ListItemText>
-
-        {/* <button
-          onClick={() => dispatch(deleteContact(id))}
-          disabled={isLoading}
-        >
-          delete
-        </button> */}
         <IconButton
           edge="end"
           aria-label="delete"

@@ -2,12 +2,10 @@ import { useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from '../../redux/contacts/operations';
 
-import { Button, List, TextField } from '@mui/material';
-import Contact from 'components/Contact/Contact';
+import { Button, TextField } from '@mui/material';
 
 const ContactsForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts.contacts);
   const isLoading = useSelector(state => state.contacts.isLoading);
 
   const formik = useFormik({
@@ -73,15 +71,16 @@ const ContactsForm = () => {
             Add contact
           </Button>
         </form>
+        {/* <div>
+          <TextField
+            style={{ width: 460, marginBottom: 20 }}
+            id="standard-basic"
+            label="Find contact by name"
+            variant="standard"
+            onChange={e => setFilter(e.target.value)}
+          />
+        </div> */}
       </div>
-      <List
-        sx={{ width: '100%', maxWidth: 460, bgcolor: 'background.paper' }}
-        aria-label="contacts"
-      >
-        {contacts.map(({ name, number, id }) => (
-          <Contact key={id} name={name} number={number} id={id} />
-        ))}
-      </List>
     </div>
   );
 };

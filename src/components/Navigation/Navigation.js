@@ -6,9 +6,9 @@ import AuthNav from '../AuthNav/AuthNav';
 const Navigation = () => {
   const isLoggedin = useSelector(state => state.auth.isLoggedin);
   return (
-    <nav className="navbar-dark bg-primary">
+    <nav className="navbar-dark bg-primary ">
       <div>
-        <div className="navbar-nav">
+        <div className="navbar-nav ">
           <div
             style={{
               gap: 50,
